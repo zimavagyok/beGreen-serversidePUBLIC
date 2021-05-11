@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[User]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[Email] NVARCHAR(255) UNIQUE NOT NULL,
+	[Password] NVARCHAR(255) NOT NULL,
+	[PublicID] NVARCHAR(255) NOT NULL UNIQUE,
+	[RegistrationDate] DATETIME,
+	[Role] NVARCHAR(16),
+	[Deactivated] BIT
+
+)

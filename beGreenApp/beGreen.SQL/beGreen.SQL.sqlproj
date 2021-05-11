@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>beGreen.SQL</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{4674af0f-4d35-49b2-939d-5fe9c6d075fc}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>beGreen.SQL</RootNamespace>
+    <AssemblyName>beGreen.SQL</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="StoredProcedures\Manufacturer" />
+    <Folder Include="StoredProcedures\User" />
+    <Folder Include="StoredProcedures\Profile" />
+    <Folder Include="StoredProcedures\Device" />
+    <Folder Include="StoredProcedures\RecyclingBank" />
+    <Folder Include="StoredProcedures\LoginDeviceHistory" />
+    <Folder Include="StoredProcedures\ResetPasswordHash" />
+    <Folder Include="StoredProcedures\DeviceProfileCon" />
+    <Folder Include="StoredProcedures\Like" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="PreDeployment.sql" />
+    <Build Include="Tables\Profile.sql" />
+    <Build Include="Tables\User.sql" />
+    <Build Include="StoredProcedures\Profile\ProfileCreate.sql" />
+    <Build Include="StoredProcedures\Profile\ProfileDelete.sql" />
+    <Build Include="StoredProcedures\Profile\ProfileGetAll.sql" />
+    <Build Include="StoredProcedures\Profile\ProfileGetByID.sql" />
+    <Build Include="StoredProcedures\Profile\ProfileUpdate.sql" />
+    <Build Include="StoredProcedures\User\UserCreate.sql" />
+    <Build Include="StoredProcedures\User\UserDelete.sql" />
+    <Build Include="StoredProcedures\User\UserGetAll.sql" />
+    <Build Include="StoredProcedures\User\UserGetByID.sql" />
+    <Build Include="StoredProcedures\User\UserUpdate.sql" />
+    <Build Include="Tables\Device.sql" />
+    <Build Include="Tables\Manufacturer.sql" />
+    <Build Include="Tables\RecyclingBank.sql" />
+    <Build Include="StoredProcedures\Device\DeviceCreate.sql" />
+    <Build Include="StoredProcedures\Device\DeviceDelete.sql" />
+    <Build Include="StoredProcedures\Device\DeviceGetAll.sql" />
+    <Build Include="StoredProcedures\Device\DeviceGetByID.sql" />
+    <Build Include="StoredProcedures\Device\DeviceUpdate.sql" />
+    <Build Include="StoredProcedures\Manufacturer\ManufacturerCreate.sql" />
+    <Build Include="StoredProcedures\Manufacturer\ManufacturerDelete.sql" />
+    <Build Include="StoredProcedures\Manufacturer\ManufacturerGetAll.sql" />
+    <Build Include="StoredProcedures\Manufacturer\ManufacturerGetByID.sql" />
+    <Build Include="StoredProcedures\Manufacturer\ManufacturerUpdate.sql" />
+    <Build Include="StoredProcedures\RecyclingBank\RecyclingBankGetAll.sql" />
+    <Build Include="Tables\loginDeviceHistory.sql" />
+    <Build Include="StoredProcedures\LoginDeviceHistory\LoginDeviceHistoryCreate.sql" />
+    <Build Include="StoredProcedures\LoginDeviceHistory\LoginDeviceHistoryFindByID.sql" />
+    <Build Include="StoredProcedures\LoginDeviceHistory\LoginDeviceHistoryGetAll.sql" />
+    <Build Include="StoredProcedures\LoginDeviceHistory\LoginDeviceHistoryDelete.sql" />
+    <Build Include="StoredProcedures\User\UserDeactivate.sql" />
+    <Build Include="StoredProcedures\User\UserFindEmail.sql" />
+    <Build Include="Tables\ResetPasswordHash.sql" />
+    <Build Include="StoredProcedures\ResetPasswordHash\ResetPasswordHashCreate.sql" />
+    <Build Include="StoredProcedures\ResetPasswordHash\ResetPasswordHashDelete.sql" />
+    <Build Include="StoredProcedures\ResetPasswordHash\ResetPasswordHashFind.sql" />
+    <Build Include="StoredProcedures\User\UserFindByUniq.sql" />
+    <Build Include="StoredProcedures\LoginDeviceHistory\LoginDeviceHistoryGetAllForUser.sql" />
+    <Build Include="StoredProcedures\User\UserFindByEmail.sql" />
+    <Build Include="StoredProcedures\User\UserFindByCredencials.sql" />
+    <Build Include="StoredProcedures\User\UserDeleteByUniq.sql" />
+    <Build Include="Tables\DeviceProfileCon.sql" />
+    <Build Include="StoredProcedures\DeviceProfileCon\DeviceProfileConCreate.sql" />
+    <Build Include="StoredProcedures\DeviceProfileCon\DeviceProfileConDeleteByDevice.sql" />
+    <Build Include="StoredProcedures\DeviceProfileCon\DeviceProfileConDeleteByProfile.sql" />
+    <Build Include="StoredProcedures\DeviceProfileCon\DeviceProfileConFindByDevice.sql" />
+    <Build Include="StoredProcedures\DeviceProfileCon\DeviceProfileConFindByProfile.sql" />
+    <Build Include="StoredProcedures\DeviceProfileCon\DeviceProfileConGetAll.sql" />
+    <Build Include="StoredProcedures\Manufacturer\ManufacturerGetByName.sql" />
+    <Build Include="StoredProcedures\Profile\ProfileChangeName.sql" />
+    <Build Include="StoredProcedures\RecyclingBank\RecyclingBankCreate.sql" />
+    <Build Include="StoredProcedures\Profile\ProfileFindUsername.sql" />
+    <Build Include="StoredProcedures\RecyclingBank\RecyclingBankDeleteByLocation.sql" />
+    <Build Include="StoredProcedures\DeviceProfileCon\DeviceProfileConFindByBoth.sql" />
+    <Build Include="Tables\Like.sql" />
+    <Build Include="StoredProcedures\Like\LikeCreate.sql" />
+    <Build Include="StoredProcedures\Like\LikeGetByBoth.sql" />
+    <Build Include="StoredProcedures\Like\LikeDelete.sql" />
+    <Build Include="StoredProcedures\Like\LikeDeleteByBoth.sql" />
+    <Build Include="StoredProcedures\RecyclingBank\RecyclingBankGetByLocation.sql" />
+    <Build Include="StoredProcedures\Like\LikeCount.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="beGreen.SQL.publish.xml" />
+  </ItemGroup>
+</Project>

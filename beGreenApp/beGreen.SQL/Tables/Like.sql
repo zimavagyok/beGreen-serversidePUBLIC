@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Like]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[RecyclingBankId] INT NOT NULL,
+	[ProfileId] NVARCHAR(255) NOT NULL
+)

@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[ResetPasswordHash]
+(
+	[PublicID] NVARCHAR(255) NOT NULL PRIMARY KEY,
+	[Hash] NVARCHAR(1024) NOT NULL UNIQUE,
+	[Date] DateTime NOT NULL
+)

@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[loginDeviceHistory]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[PublicID] NVARCHAR(255) NOT NULL,
+	[DeviceID] NVARCHAR(128) NOT NULL,
+	[loginDate] DATETIME NOT NULL
+)

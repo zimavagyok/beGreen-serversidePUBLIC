@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Manufacturer]
+(
+[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+[Name] NVARCHAR(255) NOT NULL
+)
